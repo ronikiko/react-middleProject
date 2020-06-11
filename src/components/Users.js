@@ -6,7 +6,7 @@ import User from './User'
     const context = useContext(AppContext)
     return (
         <div>
-            {context.users.map(user => <User user={user} />)}
+            {context.users.map(user => <User key={user.id} user={user} />)}
         </div>
     )
 }

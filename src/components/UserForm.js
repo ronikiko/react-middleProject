@@ -9,7 +9,7 @@ import UserFormButtons from './UserFormButtons'
             <TextField
                 name="name" 
                 value={name}
-                id="outlined-basic" 
+               
                 label="Name" 
                 variant="outlined"
              />
@@ -17,7 +17,7 @@ import UserFormButtons from './UserFormButtons'
             <TextField
                 name="name" 
                 value={email}
-                id="outlined-basic" 
+              
                 label="Email" 
                 variant="outlined"
              />
