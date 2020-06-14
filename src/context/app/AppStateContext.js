@@ -1,38 +1,42 @@
-import React,{ useState } from 'react'
+import React, { useReducer } from 'react'
 import AppContext from './AppContext'
 import { getApiDataByType } from '../../api/getDataFromApi'
+import appReducer from './AppReducer'
+import { SEARCH_USERS_FILTER, FETCH_ALL_USERS } from './types/appTypes'
 
+const AppStateContext = (props) => {
+	const initSate = {
+		users: [],
+		posts: [],
+		todos: [],
+		filterd: [],
+	}
 
- const AppStateContext = (props) => {
+	const [state, dispatch] = useReducer(appReducer, initSate)
 
-    const [users, setUsers] = useState([])
-    const [todos, setTodos] = useState([])
-    const [posts, setPosts] = useState([])
+	const getData = async (dataType) => {
+		const users = await getApiDataByType('users')
+		dispatch({ type: FETCH_ALL_USERS, payload: users })
+	}
 
-    const getData = async (dataType) => {
-        
-        if(dataType === 'users') {
-            const users = await getApiDataByType('users')
-            setUsers([...users])
-        } else if(dataType === 'todos') {
-            const todos = await getApiDataByType('todos')
-            setTodos([...todos])
-        } else if (dataType === 'posts'){
-           const posts = await getApiDataByType('posts')
-           setPosts([...posts])
-        }
-    }
+	const searchUser = (query) => {
+		dispatch({ type: SEARCH_USERS_FILTER, payload: query })
+	}
 
-    return (
-       <AppContext.Provider value={{
-           users,
-           posts,
-           todos,
-           getData
-       }}>
-           {props.children}
-       </AppContext.Provider>
-    )
+	return (
+		<AppContext.Provider
+			value={{
+				users: state.users,
+				posts: state.posts,
+				todos: state.todos,
+				filterd: state.filterd,
+				getData,
+				searchUser,
+			}}
+		>
+			{props.children}
+		</AppContext.Provider>
+	)
 }
 
 export default AppStateContext
