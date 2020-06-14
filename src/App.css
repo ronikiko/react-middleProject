@@ -1,7 +1,7 @@
-.onOver {
+.hide {
 	display: none !important;
 }
 
-.onHover {
+.show {
 	display: block !important;
 }

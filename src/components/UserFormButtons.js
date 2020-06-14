@@ -1,17 +1,17 @@
 import React from 'react'
 import Button from '@material-ui/core/Button'
-import Card from './Card'
+import CardForm from './CardForm'
 
-function UserFormBUttons() {
-	const [over, setOver] = React.useState('false')
 
-	const onOver = () => {
-		console.log(over)
-		setOver(true)
+function UserFormBUttons({user}) {
+const [open, setOpen] = React.useState(false)
+	
+	const openData = () => {
+		setOpen(true)
 	}
 
-	const onMouseLeave = () => {
-		setOver(false)
+	const closeData = () => {
+		setOpen(false)
 	}
 	return (
 		<div>
@@ -24,8 +24,7 @@ function UserFormBUttons() {
 				}}
 			>
 				<Button
-					onMouseOver={onOver}
-					onMouseLeave={onMouseLeave}
+					onMouseOver={openData}
 					variant="contained"
 				>
 					Other Data
@@ -40,8 +39,9 @@ function UserFormBUttons() {
 					</Button>
 				</div>
 			</div>
-			<div className="onOver">
-				<Card over={over} />
+
+			<div>
+				<CardForm user={user} open={open} closeData={closeData} />
 			</div>
 		</div>
 	)

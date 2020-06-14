@@ -10,6 +10,7 @@ const AppStateContext = (props) => {
 		posts: [],
 		todos: [],
 		filterd: [],
+		
 	}
 
 	const [state, dispatch] = useReducer(appReducer, initSate)
@@ -23,6 +24,7 @@ const AppStateContext = (props) => {
 		dispatch({ type: SEARCH_USERS_FILTER, payload: query })
 	}
 
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -30,8 +32,10 @@ const AppStateContext = (props) => {
 				posts: state.posts,
 				todos: state.todos,
 				filterd: state.filterd,
+			
 				getData,
 				searchUser,
+				
 			}}
 		>
 			{props.children}

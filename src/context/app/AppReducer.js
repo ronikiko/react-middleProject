@@ -22,6 +22,7 @@ export default (state, action) => {
 						user.email.toLowerCase().startsWith(action.payload.toLowerCase())
 				),
 			}
+			
 
 		default:
 			return state
