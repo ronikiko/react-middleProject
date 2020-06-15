@@ -1,38 +1,37 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import AppContext from './context/app/AppContext'
 import Users from './components/Users'
 import Menubar from './components/Menubar'
-import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container'
 
-const App = () => {
-    const context = useContext(AppContext)
 
-    useEffect(() => {
-        context.getData('users')
-        context.getData('posts')
-        context.getData('todos')
-        //eslint-disable-next-line
-    }, [])
+class App extends React.Component{
 
-    return (
-        <div>
-            <Menubar />
-            <Container>
-                <Grid container spacing={ 3 }>
+    static contextType = AppContext
+    
+    componentDidMount() {
+        const context = this.context
+        context.getData()
+      }
 
-                    <Grid item md={ 7 }>
-                        <Users />
-                    </Grid>
-                    <Grid item md={ 5 }>
-                        <h1>Left Side</h1>
-                    </Grid>
-
-                </Grid>
-            </Container>
-        </div>
-    )
+    render(){
+        
+        return (
+            <div>
+                <Menubar />
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                                <Users />
+                        </div>
+                        <div className="col">
+                            left Side
+                        </div>
+                    </div>    
+                </div>        
+            </div> 
+        )
+    }
 }
 
 export default App

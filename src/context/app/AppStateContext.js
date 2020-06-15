@@ -1,7 +1,8 @@
 import React, { useReducer } from 'react'
 import AppContext from './AppContext'
-import { getApiDataByType } from '../../api/getDataFromApi'
 import appReducer from './AppReducer'
+import axios from 'axios'
+
 import { SEARCH_USERS_FILTER, FETCH_ALL_USERS } from './types/appTypes'
 
 const AppStateContext = (props) => {
@@ -9,15 +10,14 @@ const AppStateContext = (props) => {
 		users: [],
 		posts: [],
 		todos: [],
-		filterd: [],
-		
+		filterd: [],	
 	}
 
 	const [state, dispatch] = useReducer(appReducer, initSate)
 
-	const getData = async (dataType) => {
-		const users = await getApiDataByType('users')
-		dispatch({ type: FETCH_ALL_USERS, payload: users })
+	const getData = async () => {
+		const users = await axios.get('https://jsonplaceholder.typicode.com/users')
+		dispatch({ type: FETCH_ALL_USERS, payload: users.data })
 	}
 
 	const searchUser = (query) => {
@@ -32,10 +32,8 @@ const AppStateContext = (props) => {
 				posts: state.posts,
 				todos: state.todos,
 				filterd: state.filterd,
-			
 				getData,
 				searchUser,
-				
 			}}
 		>
 			{props.children}

@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.btn-group button{
+  margin: 5px;
+}
+.moreData.hide{
+  display: none !important;
+}
+
+.moreData.show{
+  display: block !important;
+}

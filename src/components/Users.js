@@ -5,6 +5,7 @@ import User from './User'
 function Users() {
     const context = useContext(AppContext)
     const { users, filterd } = context
+    
     if (filterd.length > 0) {
         return (
             <div>
