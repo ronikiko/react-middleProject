@@ -3,14 +3,19 @@ import AppContext from './AppContext'
 import appReducer from './AppReducer'
 import axios from 'axios'
 
-import { SEARCH_USERS_FILTER, FETCH_ALL_USERS } from './types/appTypes'
+import {
+	SEARCH_USERS_FILTER,
+	FETCH_ALL_USERS,
+	UPDATE_USER,
+} from './types/appTypes'
 
 const AppStateContext = (props) => {
 	const initSate = {
 		users: [],
 		posts: [],
 		todos: [],
-		filterd: [],	
+		filterd: [],
+		some: [],
 	}
 
 	const [state, dispatch] = useReducer(appReducer, initSate)
@@ -24,6 +29,10 @@ const AppStateContext = (props) => {
 		dispatch({ type: SEARCH_USERS_FILTER, payload: query })
 	}
 
+	const updateUser = (user) => {
+		console.log(user)
+		dispatch({ type: UPDATE_USER, payload: user })
+	}
 
 	return (
 		<AppContext.Provider
@@ -32,8 +41,10 @@ const AppStateContext = (props) => {
 				posts: state.posts,
 				todos: state.todos,
 				filterd: state.filterd,
+				some: state.some,
 				getData,
 				searchUser,
+				updateUser,
 			}}
 		>
 			{props.children}

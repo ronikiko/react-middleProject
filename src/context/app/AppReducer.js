@@ -1,4 +1,8 @@
-import { SEARCH_USERS_FILTER, FETCH_ALL_USERS } from './types/appTypes'
+import {
+	SEARCH_USERS_FILTER,
+	FETCH_ALL_USERS,
+	UPDATE_USER,
+} from './types/appTypes'
 
 export default (state, action) => {
 	switch (action.type) {
@@ -22,7 +26,13 @@ export default (state, action) => {
 						user.email.toLowerCase().startsWith(action.payload.toLowerCase())
 				),
 			}
-			
+		case UPDATE_USER:
+			return {
+				...state,
+				users: state.users.map((user) =>
+					user.id === action.payload.id ? { ...action.payload } : user
+				),
+			}
 
 		default:
 			return state
