@@ -7,6 +7,9 @@ import {
 	SEARCH_USERS_FILTER,
 	FETCH_ALL_USERS,
 	UPDATE_USER,
+	SET_ALERT,
+	DELETE_USER,
+	SET_ALERT_MSG
 } from './types/appTypes'
 
 const AppStateContext = (props) => {
@@ -15,7 +18,8 @@ const AppStateContext = (props) => {
 		posts: [],
 		todos: [],
 		filterd: [],
-		some: [],
+		setAlert: false,
+		alertMsg:''
 	}
 
 	const [state, dispatch] = useReducer(appReducer, initSate)
@@ -34,6 +38,16 @@ const AppStateContext = (props) => {
 		dispatch({ type: UPDATE_USER, payload: user })
 	}
 
+	const setAlertToDispaly = (type) => {
+		dispatch({type: SET_ALERT, payload: type})
+	}
+	const setAlertMessageToDispaly = (msg) => {
+		dispatch({type: SET_ALERT_MSG, payload: msg})
+	}
+
+	const deleteUser = (id) => {
+		dispatch({type: DELETE_USER, payload: id})
+	}
 	return (
 		<AppContext.Provider
 			value={{
@@ -41,10 +55,14 @@ const AppStateContext = (props) => {
 				posts: state.posts,
 				todos: state.todos,
 				filterd: state.filterd,
-				some: state.some,
+				setAlert: state.setAlert,
+				alertMsg: state.alertMsg,
 				getData,
 				searchUser,
 				updateUser,
+				setAlertToDispaly,
+				deleteUser,
+				setAlertMessageToDispaly
 			}}
 		>
 			{props.children}

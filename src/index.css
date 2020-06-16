@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
 }
 
 code {
@@ -20,4 +21,11 @@ code {
 
 .moreData.show{
   display: block !important;
+}
+
+.center-alert{
+  position: fixed !important;
+  top: 100px !important;
+  left:50% !important;
+  
 }
