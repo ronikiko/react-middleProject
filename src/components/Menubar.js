@@ -8,8 +8,7 @@ import { fade, makeStyles } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/Search'
 import AccountCircle from '@material-ui/icons/AccountCircle'
 import AppContext from '../context/app/AppContext'
-import MenuItem from '@material-ui/core/MenuItem';
-
+import MenuItem from '@material-ui/core/MenuItem'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
@@ -69,15 +68,12 @@ const Menubar = () => {
 	const classes = useStyles()
 	const context = useContext(AppContext)
 
-	//const [s, setS] = useState('')
-
 	const searchUsers = async (e) => {
-		//setS(e.target.value)
 		context.searchUser(e.target.value)
 	}
-const passUserIdToState = () => {
-	context.userIdPass('adduser')
-}
+	const passUserIdToState = () => {
+		context.userIdPass('adduser')
+	}
 	return (
 		<div className={classes.root}>
 			<AppBar position="fixed">
@@ -102,20 +98,20 @@ const passUserIdToState = () => {
 						/>
 					</div>
 					<div>
-					<MenuItem>
-						<IconButton
-						onClick={passUserIdToState}
-						aria-haspopup="true"
-							edge="end"
-							aria-label="account of current user"
-							//aria-controls={menuId}
-							aria-haspopup="true"
-							aria-controls="menu-appbar"
-							//onClick={handleProfileMenuOpen}
-							color="inherit"
-						>
-							<AccountCircle />
-						</IconButton>
+						<MenuItem>
+							<IconButton
+								onClick={passUserIdToState}
+								aria-haspopup="true"
+								edge="end"
+								aria-label="account of current user"
+								//aria-controls={menuId}
+								aria-haspopup="true"
+								aria-controls="menu-appbar"
+								//onClick={handleProfileMenuOpen}
+								color="inherit"
+							>
+								<AccountCircle />
+							</IconButton>
 						</MenuItem>
 					</div>
 				</Toolbar>

@@ -11,7 +11,7 @@ function Users() {
 		return (
 			<div>
 				{filterd.map((user) => (
-					<User key={user.id} user={user} color="orange" />
+					<User key={user.id} user={user} />
 				))}
 			</div>
 		)
@@ -19,7 +19,7 @@ function Users() {
 		return (
 			<div>
 				{users.map((user) => (
-					<User key={user.id} user={user} color="orange" />
+					<User key={user.id} user={user} />
 				))}
 			</div>
 		)

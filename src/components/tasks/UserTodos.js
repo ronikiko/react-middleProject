@@ -8,7 +8,7 @@ const UserTodos = () => {
 
 	const context = useContext(AppContetx)
 	const { userID, userTodos } = context
-	
+
 	const cancel = () => {
 		setIsadd(false)
 	}
@@ -21,11 +21,14 @@ const UserTodos = () => {
 				</button>
 			</div>
 			{isAdd ? (
+				// this is the add todo form
+				// is display when the the button add is press in the ui
+				// and replace the state to true.
 				<AddTodo cancel={() => cancel()} />
 			) : (
 				<div>
 					{userTodos.map((todo) => (
-						<UserTodo key={todo.id} todo={todo} />
+						<UserTodo todo={todo} key={todo.id} />
 					))}
 				</div>
 			)}

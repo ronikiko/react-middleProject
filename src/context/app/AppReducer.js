@@ -38,7 +38,6 @@ export default (state, action) => {
 				),
 			}
 		case USER_TODO_BY_ID:
-		
 			return {
 				...state,
 				userTodos: state.todos.filter((todo) => todo.userId === action.payload),
