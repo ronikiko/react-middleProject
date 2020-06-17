@@ -13,6 +13,7 @@ function User({ user, color }) {
 		context.userPostById(user.id)
 		setIsorange(true)
 	}
+	
 	return (
 		<div className={isOrange ? 'user user-orange' : 'user'}>
 			<h3 onClick={passUserIdToState}>ID : {user.id}</h3>

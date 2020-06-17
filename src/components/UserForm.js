@@ -15,7 +15,12 @@ const UserForm = ({ user }) => {
 	})
 
 	const showData = () => {
-		setisShow(true)
+		if(context.userID === 'adduser'){
+			setisShow(false)
+		}else {
+
+			setisShow(true)
+		}
 	}
 
 	const closeData = (e) => {

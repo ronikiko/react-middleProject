@@ -5,6 +5,7 @@ import Users from './components/Users'
 import Menubar from './components/Menubar'
 import UserPosts from './components/tasks/UserPosts'
 import UserTodos from './components/tasks/UserTodos'
+import AddUser from './components/AddUser'
 
 const App = () => {
 	const context = useContext(AppContext)
@@ -16,6 +17,23 @@ const App = () => {
 		// eslint-disabeld-next-line
 	}, [])
 
+	const renderPage = () => {
+		if(context.userID === 'adduser'){
+			return <AddUser />
+		} else if(context.userID){
+			return (
+				<div>
+					 <UserTodos />
+					 <UserPosts />
+				</div>
+			)
+		}
+		else {
+			return <div></div>
+		}
+	}
+
+	
 	return (
 		<div>
 			<Menubar />
@@ -25,8 +43,7 @@ const App = () => {
 						<Users />
 					</div>
 					<div className="col">
-						{context.userID && <UserTodos />}
-						{context.userID && <UserPosts />}
+					{renderPage()}
 					</div>
 				</div>
 			</div>

@@ -38,3 +38,6 @@ code {
 	padding: 20px;
 	margin: 10px;
 }
+button:focus{
+	outline: none !important;
+}
