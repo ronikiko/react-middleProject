@@ -6,11 +6,13 @@ import Typography from '@material-ui/core/Typography'
 import InputBase from '@material-ui/core/InputBase'
 import { fade, makeStyles } from '@material-ui/core/styles'
 import SearchIcon from '@material-ui/icons/Search'
+import AccountCircle from '@material-ui/icons/AccountCircle'
 import AppContext from '../context/app/AppContext'
 
 const useStyles = makeStyles((theme) => ({
 	root: {
 		flexGrow: 1,
+		marginBottom: 80,
 	},
 
 	title: {
@@ -74,14 +76,8 @@ const Menubar = () => {
 
 	return (
 		<div className={classes.root}>
-			<AppBar position="static">
+			<AppBar position="fixed">
 				<Toolbar>
-					<IconButton
-						edge="start"
-						className={classes.menuButton}
-						color="inherit"
-						aria-label="open drawer"
-					></IconButton>
 					<Typography className={classes.title} variant="h6" noWrap>
 						RK-app
 					</Typography>
@@ -100,6 +96,18 @@ const Menubar = () => {
 							onChange={searchUsers}
 							inputProps={{ 'aria-label': 'search' }}
 						/>
+					</div>
+					<div>
+						<IconButton
+							edge="end"
+							aria-label="account of current user"
+							//aria-controls={menuId}
+							aria-haspopup="true"
+							//onClick={handleProfileMenuOpen}
+							color="inherit"
+						>
+							<AccountCircle />
+						</IconButton>
 					</div>
 				</Toolbar>
 			</AppBar>
