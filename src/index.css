@@ -35,7 +35,7 @@ code {
 }
 .user {
 	padding: 20px;
-	margin: 10px;
+	
 }
 button:focus {
 	outline: none !important;
@@ -53,4 +53,16 @@ button:focus {
 .btns button {
 	float: right;
 	margin: 10px;
+}
+.add-user-form{
+	width: 45%;
+	position: fixed;
+	top: 200px;
+	right: 50px;
+	/* box-shadow: 10xp 10px 10px 10px #ccc !important; */
+	background-color: rgba(156, 154, 154, 0.123);
+}
+
+.add-form{
+	background-color: rgba(156, 154, 154, 0.123);
 }

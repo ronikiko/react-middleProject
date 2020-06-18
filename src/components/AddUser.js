@@ -10,7 +10,7 @@ function AddUser() {
 	}
 
 	return (
-		<div className="card">
+		<div className="card add-user-form">
 			<div className="card-body">
 				<h5 className="card-title">Add New user</h5>
 				<div className="card-text">

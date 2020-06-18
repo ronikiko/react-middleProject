@@ -3,7 +3,7 @@ import React from 'react'
 const AddPost = ({ cancel }) => {
 	return (
 		<div>
-			<div className="card">
+			<div className="card add-form">
 				<div className="card-body">
 					<h5 className="card-title">Add New Post</h5>
 					<div className="card-text">

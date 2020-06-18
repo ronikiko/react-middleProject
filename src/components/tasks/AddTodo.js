@@ -3,7 +3,7 @@ import React from 'react'
 const AddTodo = ({ cancel }) => {
 	return (
 		<div>
-			<div className="card">
+			<div className="card add-form">
 				<div className="card-body">
 					<h5 className="card-title">Add New Todo</h5>
 					<div className="card-text">
