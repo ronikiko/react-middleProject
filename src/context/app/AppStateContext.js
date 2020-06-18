@@ -23,7 +23,7 @@ const AppStateContext = (props) => {
 		users: [],
 		posts: [],
 		userPosts: [],
-		userTodosById: [],
+		uuu: [],
 		todos: [],
 		userTodos: [],
 		filterd: [],
@@ -90,6 +90,7 @@ const AppStateContext = (props) => {
 	const markAsCompletedState = (todo) => {
 		dispatch({ type: TODO_MARK_AS_COMPLETED, payload: todo })
 	}
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -97,7 +98,7 @@ const AppStateContext = (props) => {
 				posts: state.posts,
 				todos: state.todos,
 				userTodos: state.userTodos,
-				userTodosById: state.userTodosById,
+				uuu: state.uuu,
 				userPosts: state.userPosts,
 				filterd: state.filterd,
 				setAlert: state.setAlert,

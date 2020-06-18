@@ -9,13 +9,15 @@ function User({ user, color }) {
 	const passUserIdToState = () => {
 		context.userIdPass(user.id)
 		// call the function from the context
-
 		context.userTodoById(user.id)
 		context.userPostById(user.id)
 	}
 
 	return (
-		<div className={user.id === context.userID ? 'user user-orange' : 'user'}>
+		<div
+			key={user.id}
+			className={user.id === context.userID ? 'user user-orange' : 'user'}
+		>
 			<h3 onClick={passUserIdToState}>ID : {user.id}</h3>
 			{context.setAlert && <Alert />}
 			<UserForm user={user} />

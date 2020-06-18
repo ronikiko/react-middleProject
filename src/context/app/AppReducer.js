@@ -61,6 +61,9 @@ export default (state, action) => {
 						user.name.toLowerCase().startsWith(action.payload.toLowerCase()) ||
 						user.email.toLowerCase().startsWith(action.payload.toLowerCase())
 				),
+				userTodos: [],
+				userPosts: [],
+				userID: null,
 			}
 		case PASS_USER_ID:
 			return {
@@ -92,6 +95,9 @@ export default (state, action) => {
 			return {
 				...state,
 				users: state.users.filter((user) => user.id !== action.payload),
+				userTodos: [],
+				userPosts: [],
+				userID: null,
 			}
 
 		default:

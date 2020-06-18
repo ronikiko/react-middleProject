@@ -13,13 +13,18 @@ function UserPosts() {
 		setIsadd(false)
 	}
 	return (
-		<div style={{ width: '80%' }}>
-			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-				<h1>User Posts {userID}</h1>
-				<button className="btn btn-secondary" onClick={() => setIsadd(true)}>
+		<div style={{ width: '80%', marginTop: '20px' }}>
+			<div className="alert alert-secondary" role="alert">
+				User Posts {userID}
+				<button
+					style={{ position: 'relative', top: '-8px' }}
+					className="btn btn-secondary float-right"
+					onClick={() => setIsadd(true)}
+				>
 					Add Post
 				</button>
 			</div>
+
 			{isAdd ? (
 				<AddPost cancel={() => cancel()} />
 			) : (

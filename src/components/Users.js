@@ -3,7 +3,7 @@ import AppContext from '../context/app/AppContext'
 import User from './User'
 
 function Users() {
-	const [isOrange, setIsorange] = useState(false)
+	const [isOrange, setIsorange] = useState('red-border')
 	const context = useContext(AppContext)
 	const { users, filterd } = context
 
@@ -11,7 +11,9 @@ function Users() {
 		return (
 			<div>
 				{filterd.map((user) => (
-					<User key={user.id} user={user} />
+					<div className={isOrange}>
+						<User key={user.id} user={user} />
+					</div>
 				))}
 			</div>
 		)
@@ -19,7 +21,9 @@ function Users() {
 		return (
 			<div>
 				{users.map((user) => (
-					<User key={user.id} user={user} />
+					<div className={isOrange}>
+						<User key={user.id} user={user} />
+					</div>
 				))}
 			</div>
 		)

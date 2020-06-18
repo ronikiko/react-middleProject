@@ -34,10 +34,23 @@ code {
 	background-color: orange;
 }
 .user {
-	border: 1px solid red;
 	padding: 20px;
 	margin: 10px;
 }
-button:focus{
+button:focus {
 	outline: none !important;
+}
+
+.red-border {
+	margin: 20px;
+	padding: 0;
+	border: 2px solid red;
+}
+.green-border {
+	border: 2px solid green;
+}
+
+.btns button {
+	float: right;
+	margin: 10px;
 }

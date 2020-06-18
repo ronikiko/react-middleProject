@@ -7,19 +7,24 @@ const UserTodos = () => {
 	const [isAdd, setIsadd] = useState(false)
 
 	const context = useContext(AppContetx)
-	const { userID, userTodos } = context
+	const { userID, userTodos, uuu } = context
 
 	const cancel = () => {
 		setIsadd(false)
 	}
 	return (
 		<div style={{ width: '80%' }}>
-			<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-				<h1>Todos user: {userID}</h1>
-				<button className="btn btn-secondary" onClick={() => setIsadd(true)}>
+			<div className="alert alert-secondary" role="alert">
+				Todos user: {userID}
+				<button
+					style={{ position: 'relative', top: '-8px' }}
+					className="btn btn-secondary float-right"
+					onClick={() => setIsadd(true)}
+				>
 					Add Todo
 				</button>
 			</div>
+
 			{isAdd ? (
 				// this is the add todo form
 				// is display when the the button add is press in the ui
@@ -30,6 +35,9 @@ const UserTodos = () => {
 					{userTodos.map((todo) => (
 						<UserTodo todo={todo} key={todo.id} />
 					))}
+					{/* {userTodos.map((todo) => (
+						<UserTodo todo={todo} key={todo.id} />
+					))} */}
 				</div>
 			)}
 		</div>
