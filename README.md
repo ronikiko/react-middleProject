@@ -9,6 +9,6 @@
 
 Runs the app in port 3000
 
-### npm build
+### `npm build`
 
 Build the app for production to `build` folder.
