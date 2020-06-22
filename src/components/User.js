@@ -14,13 +14,15 @@ function User({ user, color }) {
 	}
 
 	return (
-		<div
-			key={user.id}
-			className={user.id === context.userID ? 'user user-orange' : 'user'}
-		>
-			<h3 onClick={passUserIdToState}>ID : {user.id}</h3>
-			{context.setAlert && <Alert />}
-			<UserForm user={user} />
+		<div className={user.id === context.userID ? color : 'red-border'}>
+			<div
+				key={user.id}
+				className={user.id === context.userID ? 'user user-orange' : 'user'}
+			>
+				<h3 onClick={passUserIdToState}>ID : {user.id}</h3>
+				{context.setAlert && <Alert />}
+				<UserForm user={user} />
+			</div>
 		</div>
 	)
 }

@@ -16,6 +16,7 @@ import {
 	USER_TODO_BY_ID,
 	TODO_MARK_AS_COMPLETED,
 	USER_POST_BY_ID,
+	TODO_COMPLETED,
 } from './types/appTypes'
 
 const AppStateContext = (props) => {
@@ -23,7 +24,6 @@ const AppStateContext = (props) => {
 		users: [],
 		posts: [],
 		userPosts: [],
-		uuu: [],
 		todos: [],
 		userTodos: [],
 		filterd: [],
@@ -98,7 +98,6 @@ const AppStateContext = (props) => {
 				posts: state.posts,
 				todos: state.todos,
 				userTodos: state.userTodos,
-				uuu: state.uuu,
 				userPosts: state.userPosts,
 				filterd: state.filterd,
 				setAlert: state.setAlert,
