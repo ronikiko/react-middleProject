@@ -1,11 +1,10 @@
 import React, { useContext } from 'react'
 import AppContext from '../context/app/AppContext'
 
-
 const UserForm = ({ user }) => {
 	const context = useContext(AppContext)
 	const [isShow, setisShow] = React.useState(false)
-	
+
 	const [form, setForm] = React.useState({
 		name: user.name,
 		email: user.email,
@@ -15,10 +14,9 @@ const UserForm = ({ user }) => {
 	})
 
 	const showData = () => {
-		if(context.userID === 'adduser'){
+		if (context.userID === 'adduser') {
 			setisShow(false)
-		}else {
-
+		} else {
 			setisShow(true)
 		}
 	}
@@ -41,26 +39,24 @@ const UserForm = ({ user }) => {
 			},
 		}
 		context.updateUser(newUser)
-		context.setAlertToDispaly( true )
+		context.setAlertToDispaly(true)
 		context.setAlertMessageToDispaly('Update user Successfull!')
 		setTimeout(() => {
 			context.setAlertToDispaly(false)
 			context.setAlertMessageToDispaly('')
 		}, 3000)
 	}
-const deleteUserFun = () => {
-	context.deleteUser(user.id)
-	context.setAlertToDispaly(true)
-	context.setAlertMessageToDispaly('Delete user Successfull!')
-	setTimeout(() => {
-		context.setAlertToDispaly(false)
-		context.setAlertMessageToDispaly('')
-	}, 3000)
-
-}
+	const deleteUserFun = () => {
+		context.deleteUser(user.id)
+		context.setAlertToDispaly(true)
+		context.setAlertMessageToDispaly('Delete user Successfull!')
+		setTimeout(() => {
+			context.setAlertToDispaly(false)
+			context.setAlertMessageToDispaly('')
+		}, 3000)
+	}
 	return (
 		<div className="card">
-			
 			<div className="card-body">
 				<h5 className="card-title">Card title</h5>
 
@@ -87,18 +83,23 @@ const deleteUserFun = () => {
 							/>
 						</div>
 						<div className="btn-group">
-							<button className="btn btn-secondary" onClick={e => { e.preventDefault()}} onMouseOver={showData}>
+							<button
+								className="btn btn-secondary"
+								onClick={(e) => {
+									e.preventDefault()
+								}}
+								onMouseOver={showData}
+							>
 								Other Data
 							</button>
 							<button className="btn btn-primary" onClick={updateUserFun}>
 								Update
 							</button>
-							<button className="btn btn-danger" onClick={deleteUserFun }>Delete</button>
+							<button className="btn btn-danger" onClick={deleteUserFun}>
+								Delete
+							</button>
 						</div>
-						<div
-							
-							className={ isShow ? 'moreData show' : 'moreData hide'}
-						>
+						<div className={isShow ? 'moreData show' : 'moreData hide'}>
 							<h3 onClick={closeData}>More Data</h3>
 							<div className="form-group">
 								<label htmlFor="city">City</label>

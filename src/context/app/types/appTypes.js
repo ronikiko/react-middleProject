@@ -11,4 +11,8 @@ export const PASS_USER_ID = 'PASS_USER_ID'
 export const USER_TODO_BY_ID = 'USER_TODO_BY_ID'
 export const USER_POST_BY_ID = 'USER_POST_BY_ID'
 export const TODO_MARK_AS_COMPLETED = 'TODO_MARK_AS_COMPLETED'
+<<<<<<< HEAD
 export const ADD_NEW_TODO = 'ADD_NEW_TODO'
+=======
+export const TODO_COMPLETED = 'TODO_COMPLETED'
+>>>>>>> fb06af183fcfab827a07400bb1cd4eeba5d875ac

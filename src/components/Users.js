@@ -1,19 +1,30 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import AppContext from '../context/app/AppContext'
 import User from './User'
 
 function Users() {
-	const [isOrange, setIsorange] = useState('red-border')
+	const [borderColor, setBorderColor] = useState('red-border')
 	const context = useContext(AppContext)
-	const { users, filterd } = context
+	const { users, filterd, userTodos } = context
+
+	useEffect(() => {
+		if (userTodos !== 'undefined') {
+			if (userTodos.some((to) => to.completed === false)) {
+				setBorderColor('red-border')
+			} else {
+				setBorderColor('green-border')
+			}
+		} else {
+			setBorderColor('red-border')
+		}
+		// eslint-disable-next-line
+	}, [context.userTodos])
 
 	if (filterd.length > 0) {
 		return (
 			<div>
 				{filterd.map((user) => (
-					<div className={isOrange}>
-						<User key={user.id} user={user} />
-					</div>
+					<User key={user.id} user={user} color={borderColor} />
 				))}
 			</div>
 		)
@@ -21,9 +32,7 @@ function Users() {
 		return (
 			<div>
 				{users.map((user) => (
-					<div className={isOrange}>
-						<User key={user.id} user={user} />
-					</div>
+					<User key={user.id} user={user} color={borderColor} />
 				))}
 			</div>
 		)

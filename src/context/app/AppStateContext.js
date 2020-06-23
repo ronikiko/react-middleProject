@@ -16,7 +16,11 @@ import {
 	USER_TODO_BY_ID,
 	TODO_MARK_AS_COMPLETED,
 	USER_POST_BY_ID,
+<<<<<<< HEAD
 	ADD_NEW_TODO
+=======
+	TODO_COMPLETED,
+>>>>>>> fb06af183fcfab827a07400bb1cd4eeba5d875ac
 } from './types/appTypes'
 
 const AppStateContext = (props) => {

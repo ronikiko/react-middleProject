@@ -18,33 +18,33 @@ const App = () => {
 	}, [])
 
 	const renderPage = () => {
-		if(context.userID === 'adduser'){
+		if (context.userID === 'adduser') {
 			return <AddUser />
-		} else if(context.userID){
+		} else if (context.userID) {
+			return (
+				<div className="row">
+					<UserTodos />
+					<UserPosts />
+				</div>
+			)
+		} else {
 			return (
 				<div>
-					 <UserTodos />
-					 <UserPosts />
+					<h1>Please Select User to see Todos and posts</h1>
 				</div>
 			)
 		}
-		else {
-			return <div></div>
-		}
 	}
 
-	
 	return (
 		<div>
 			<Menubar />
 			<div className="container-fluid">
 				<div className="row">
-					<div className="col">
+					<div className="col-md-4 col-sm-12">
 						<Users />
 					</div>
-					<div className="col">
-					{renderPage()}
-					</div>
+					<div className="col-md-8 col-sm-12">{renderPage()}</div>
 				</div>
 			</div>
 		</div>

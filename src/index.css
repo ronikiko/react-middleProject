@@ -35,7 +35,6 @@ code {
 }
 .user {
 	padding: 20px;
-	
 }
 button:focus {
 	outline: none !important;
@@ -47,6 +46,8 @@ button:focus {
 	border: 2px solid red;
 }
 .green-border {
+	margin: 20px;
+	padding: 0;
 	border: 2px solid green;
 }
 
@@ -54,7 +55,7 @@ button:focus {
 	float: right;
 	margin: 10px;
 }
-.add-user-form{
+.add-user-form {
 	width: 45%;
 	position: fixed;
 	top: 200px;
@@ -63,6 +64,6 @@ button:focus {
 	background-color: rgba(156, 154, 154, 0.123);
 }
 
-.add-form{
+.add-form {
 	background-color: rgba(156, 154, 154, 0.123);
 }
