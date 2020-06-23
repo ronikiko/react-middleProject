@@ -17,7 +17,8 @@ import {
 	TODO_MARK_AS_COMPLETED,
 	USER_POST_BY_ID,
 	ADD_NEW_TODO,
-	ADD_NEW_POST
+	ADD_NEW_POST,
+	ADD_NEW_USER
 } from './types/appTypes'
 
 const AppStateContext = (props) => {
@@ -100,6 +101,9 @@ const AppStateContext = (props) => {
 		dispatch({type: ADD_NEW_POST, payload: post})
 	}
 
+	const addNewUser = (user) => {
+		dispatch({type: ADD_NEW_USER, payload: user})
+	}
 	return (
 		<AppContext.Provider
 			value={{
@@ -123,7 +127,8 @@ const AppStateContext = (props) => {
 				markAsCompletedState,
 				userPostById,
 				addNewTodo,
-				addNewPost
+				addNewPost,
+				addNewUser
 			}}
 		>
 			{props.children}

@@ -50,7 +50,7 @@ const AddTodo = ({ cancel }) => {
 							<input 
 								type="text" 
 								value={title} 
-								className="form-control" 
+								className={err ? 'form-control is-invalid' : 'form-control'} 
 								name="title" 
 								onChange={(e)=> setTitle(e.target.value)} 
 								/>
