@@ -16,6 +16,7 @@ import {
 	USER_TODO_BY_ID,
 	TODO_MARK_AS_COMPLETED,
 	USER_POST_BY_ID,
+	ADD_NEW_TODO
 } from './types/appTypes'
 
 const AppStateContext = (props) => {
@@ -23,7 +24,6 @@ const AppStateContext = (props) => {
 		users: [],
 		posts: [],
 		userPosts: [],
-		uuu: [],
 		todos: [],
 		userTodos: [],
 		filterd: [],
@@ -60,7 +60,7 @@ const AppStateContext = (props) => {
 	}
 
 	const updateUser = (user) => {
-		console.log(user)
+		//console.log(user)
 		dispatch({ type: UPDATE_USER, payload: user })
 	}
 
@@ -91,6 +91,10 @@ const AppStateContext = (props) => {
 		dispatch({ type: TODO_MARK_AS_COMPLETED, payload: todo })
 	}
 
+	const addNewTodo = (todo) => {
+		dispatch({type: ADD_NEW_TODO, payload: todo})
+	}
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -98,7 +102,6 @@ const AppStateContext = (props) => {
 				posts: state.posts,
 				todos: state.todos,
 				userTodos: state.userTodos,
-				uuu: state.uuu,
 				userPosts: state.userPosts,
 				filterd: state.filterd,
 				setAlert: state.setAlert,
@@ -114,6 +117,7 @@ const AppStateContext = (props) => {
 				userTodoById,
 				markAsCompletedState,
 				userPostById,
+				addNewTodo
 			}}
 		>
 			{props.children}

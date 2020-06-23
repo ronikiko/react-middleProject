@@ -15,7 +15,6 @@ function User({ user, color }) {
 
 	return (
 		<div
-			key={user.id}
 			className={user.id === context.userID ? 'user user-orange' : 'user'}
 		>
 			<h3 onClick={passUserIdToState}>ID : {user.id}</h3>
