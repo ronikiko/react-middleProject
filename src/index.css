@@ -67,3 +67,7 @@ button:focus {
 .add-form {
 	background-color: rgba(156, 154, 154, 0.123);
 }
+
+.more-data:hover{
+	cursor: move;
+}

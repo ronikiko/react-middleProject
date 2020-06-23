@@ -11,7 +11,8 @@ import {
 	USER_TODO_BY_ID,
 	TODO_MARK_AS_COMPLETED,
 	USER_POST_BY_ID,
-	ADD_NEW_TODO
+	ADD_NEW_TODO,
+	ADD_NEW_POST
 } from './types/appTypes'
 
 export default (state, action) => {
@@ -106,7 +107,11 @@ export default (state, action) => {
 				...state,
 				userTodos: [...state.userTodos, action.payload]
 			}
-
+		case ADD_NEW_POST:
+			return {
+				...state,
+				userPosts: [...state.userPosts, action.payload]
+			}
 		default:
 			return state
 	}

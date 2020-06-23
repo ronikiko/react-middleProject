@@ -100,7 +100,7 @@ const UserForm = ({ user }) => {
 							</button>
 						</div>
 						<div className={isShow ? 'moreData show' : 'moreData hide'}>
-							<h3 onClick={closeData}>More Data</h3>
+							<h3 className="more-data" onClick={closeData}>More Data</h3>
 							<div className="form-group">
 								<label htmlFor="city">City</label>
 								<input
