@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/react-middleProject/static/css/main.2f0d8aa4.chunk.css",
+    "main.js": "/react-middleProject/static/js/main.c86069c6.chunk.js",
+    "main.js.map": "/react-middleProject/static/js/main.c86069c6.chunk.js.map",
+    "runtime-main.js": "/react-middleProject/static/js/runtime-main.83719734.js",
+    "runtime-main.js.map": "/react-middleProject/static/js/runtime-main.83719734.js.map",
+    "static/js/2.e8c6a6d2.chunk.js": "/react-middleProject/static/js/2.e8c6a6d2.chunk.js",
+    "static/js/2.e8c6a6d2.chunk.js.map": "/react-middleProject/static/js/2.e8c6a6d2.chunk.js.map",
+    "index.html": "/react-middleProject/index.html",
+    "precache-manifest.0b4e9dee6e5965762bc7b7969543192d.js": "/react-middleProject/precache-manifest.0b4e9dee6e5965762bc7b7969543192d.js",
+    "service-worker.js": "/react-middleProject/service-worker.js",
+    "static/css/main.2f0d8aa4.chunk.css.map": "/react-middleProject/static/css/main.2f0d8aa4.chunk.css.map",
+    "static/js/2.e8c6a6d2.chunk.js.LICENSE.txt": "/react-middleProject/static/js/2.e8c6a6d2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83719734.js",
+    "static/js/2.e8c6a6d2.chunk.js",
+    "static/css/main.2f0d8aa4.chunk.css",
+    "static/js/main.c86069c6.chunk.js"
+  ]
+}
