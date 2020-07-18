@@ -105,7 +105,6 @@ const Menubar = () => {
 								edge="end"
 								aria-label="account of current user"
 								//aria-controls={menuId}
-								aria-haspopup="true"
 								aria-controls="menu-appbar"
 								//onClick={handleProfileMenuOpen}
 								color="inherit"

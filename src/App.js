@@ -14,7 +14,7 @@ const App = () => {
 		context.getData('users')
 		context.getData('posts')
 		context.getData('todos')
-		// eslint-disabeld-next-line
+		// eslint-disable-next-line
 	}, [])
 
 	const renderPage = () => {

@@ -43,17 +43,21 @@ const AppStateContext = (props) => {
 					'https://jsonplaceholder.typicode.com/users'
 				)
 				dispatch({ type: FETCH_ALL_USERS, payload: users.data })
-
+					break
 			case 'posts':
 				const posts = await axios.get(
 					'https://jsonplaceholder.typicode.com/posts'
 				)
 				dispatch({ type: FETCH_ALL_POSTS, payload: posts.data })
+				break
 			case 'todos':
 				const todos = await axios.get(
 					'https://jsonplaceholder.typicode.com/todos'
 				)
 				dispatch({ type: FETCH_ALL_TODOS, payload: todos.data })
+				break
+			default:
+				return []
 		}
 	}
 

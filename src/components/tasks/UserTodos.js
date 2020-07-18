@@ -7,7 +7,7 @@ const UserTodos = () => {
 	const [isAdd, setIsadd] = useState(false)
 
 	const context = useContext(AppContetx)
-	const { userID, userTodos, uuu } = context
+	const { userID, userTodos } = context
 
 	const cancel = () => {
 		setIsadd(false)

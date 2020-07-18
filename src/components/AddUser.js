@@ -1,10 +1,10 @@
 import React, { useContext, useState } from 'react'
 import AppContext from '../context/app/AppContext'
 
-function AddUser() {
+const AddUser = () => {
 	const context = useContext(AppContext)
 
-	const { addNewUser, users, setAlert, setAlertToDispaly, setAlertMessageToDispaly } = context
+	const { addNewUser, users, setAlertToDispaly, setAlertMessageToDispaly } = context
 
 	const [user, setUser] = useState({ name: '', email: ''})
 	const [err, setErr] = useState('')
